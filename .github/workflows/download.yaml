@@ -1,7 +1,6 @@
 name: Download from Google Drive
 
 jobs:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
     steps:
         - name: download_gdrive
