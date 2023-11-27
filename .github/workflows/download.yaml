@@ -1,3 +1,12 @@
+# Para gerar nova SKICKA_TOKENCACHE_JSON, e uma vez que tem um expire, basta fazer o seguinte.
+#
+# Em primeiro lugar, gerar a nova skicka:
+# docker run -e GOOGLE_CLIENT_ID=928528208103-h1rda31pa1823mjhprh5qagq4m9u47av.apps.googleusercontent.com -e GOOGLE_CLIENT_SECRET=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 --rm -it --entrypoint "ash" satackey/skicka
+#
+# Em segundo, procurar a nova secret para colocar na secrets.SKICKA_TOKENCACHE_JSON
+# sed -i -e "s/;clientid=YOUR_GOOGLE_APP_CLIENT_ID/clientid=$GOOGLE_CLIENT_ID/" ~/.skicka.config && sed -i -e "s/;clientsecret=YOUR_GOOGLE_APP_SECRET/clientsecret=$GOOGLE_CLIENT_SECRET/" ~/.skicka.config && skicka -no-browser-auth ls && cat /root/.skicka.tokencache.json
+#
+
 name: '[GDRIVE] Download'
 on:
   workflow_dispatch:
