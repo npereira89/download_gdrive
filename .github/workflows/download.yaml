@@ -4,7 +4,7 @@ jobs:
   build_and_push:
     runs-on: ubuntu-latest
     steps:
-      - name: download_gdrive
+      - name: Download files from Google Drive
         uses: satackey/action-google-drive@v14
         with:
         skicka-tokencache-json: ${{ secrets.SKICKA_TOKENCACHE_JSON }}
