@@ -10,16 +10,6 @@ on:
           description: 'Folder to export'
           default: './' 
           type: string
-  workflow_call:
-    inputs:
-      PATH_FROM:
-          description: 'Folder to export'
-          default: './Fotos/' 
-          type: string
-      PATH_TO:
-          description: 'Folder to export'
-          default: './' 
-          type: string     
 jobs:
   download-gdriver:
     runs-on: ubuntu-latest
@@ -34,4 +24,3 @@ jobs:
           # For those who set up Google Drive API client ID and secret themselves
           google-client-id: ${{ secrets.GOOGLE_CLIENT_ID }}
           google-client-secret: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-
