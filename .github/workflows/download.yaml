@@ -43,6 +43,6 @@ jobs:
         uses: actions/upload-artifact@latest
         with:
             name: dowload-files-gdrive
-            path: ${{find_folder_download.output.PATH_DOWNLOAD}}
+            path: ${{ env.PATH_DOWNLOAD }}
             retention-days: 15
       
