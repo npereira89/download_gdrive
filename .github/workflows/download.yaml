@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Download from Google Drive
-        uses: satackey/action-google-drive@release-enable-downloads
+        uses: satackey/action-google-drive@v1.2.1
         with:
           skicka-tokencache-json: ${{ secrets.SKICKA_TOKENCACHE_JSON }}
           download-from: ${{inputs.PATH_FROM}}
