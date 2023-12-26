@@ -34,15 +34,10 @@ jobs:
           google-client-id: ${{ secrets.GOOGLE_CLIENT_ID }}
           google-client-secret: ${{ secrets.GOOGLE_CLIENT_SECRET }}
 
-      - run: 'Identify folder to download'
-        id: find_folder_download
-        env: 
-            PATH_DOWNLOAD: echo "$(pwd)"
-
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v4
         with:
-            name: dowload-files-gdrive
-            path: ${{ env.PATH_DOWNLOAD }}
+            name: files-gdrive
+            path: ${{inputs.PATH_TO}}
             retention-days: 15
       
