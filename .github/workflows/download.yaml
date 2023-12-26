@@ -29,8 +29,20 @@ jobs:
           skicka-tokencache-json: ${{ secrets.SKICKA_TOKENCACHE_JSON }}
           download-from: ${{inputs.PATH_FROM}}
           download-to:  ${{inputs.PATH_TO}}
-      
+
           # For those who set up Google Drive API client ID and secret themselves
           google-client-id: ${{ secrets.GOOGLE_CLIENT_ID }}
           google-client-secret: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+
+      - run: 'Identify folder to download'
+        id: find_folder_download
+        env: 
+            PATH_DOWNLOAD: echo "$(pwd)"
+
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@latest
+        with:
+            name: dowload-files-gdrive
+            path: ${{find_folder_download.output.PATH_DOWNLOAD}}
+            retention-days: 15
       
