@@ -23,8 +23,6 @@ jobs:
   download-gdriver:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          echo "$(pwd)"
       - name: Download from Google Drive
         uses: satackey/action-google-drive@v1.2.1
         with:
