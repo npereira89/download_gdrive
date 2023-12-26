@@ -40,7 +40,7 @@ jobs:
             PATH_DOWNLOAD: echo "$(pwd)"
 
       - name: 'Upload Artifact'
-        uses: actions/upload-artifact@latest
+        uses: actions/upload-artifact@v4.0
         with:
             name: dowload-files-gdrive
             path: ${{ env.PATH_DOWNLOAD }}
